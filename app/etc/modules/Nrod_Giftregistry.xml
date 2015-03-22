@@ -20,20 +20,16 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    Mage
- * @package     Mage_ConfigurableSwatches
+ * @package     Mage_Core
  * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 -->
 <config>
     <modules>
-        <Mage_ConfigurableSwatches>
+        <Nrod_Giftregistry>
             <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Catalog />
-                <Mage_CatalogSearch />
-            </depends>
-        </Mage_ConfigurableSwatches>
+            <codePool>local</codePool>
+        </Nrod_Giftregistry>
     </modules>
 </config>
