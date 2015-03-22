@@ -10,8 +10,10 @@
 require_once('app/Mage.php'); //Path to Magento
 umask(0);
 Mage::app();
+ini_set('display_errors', 1);
+
 
 $model=Mage::getModel('catalog/product')->load(1);
-$helper=Mage::helper('nrod/giftregistry');
-echo get_class($helper);
+$helper=Mage::helper('giftregistry');
+echo $helper->getTest();
 
