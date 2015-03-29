@@ -31,5 +31,65 @@
                 <class>Nrod_Giftregistry_Helper</class>
             </giftregistry>            
         </helpers>
+        <blocks>
+            <giftregistry>
+                <class>Nrod_Giftregistry_Block</class>
+            </giftregistry>
+        </blocks>
+        <models>
+            <giftregistry>
+                <class>
+                    Nrod_Giftregistry_Model
+                </class>
+                <resourceModel>
+                    nrod_giftregistry_mysql4
+                </resourceModel>
+            </giftregistry>
+            <nrod_giftregistry_mysql4>
+                <class>Nrod_Giftregistry_Model_Mysql4</class>
+                <entities>
+                    <entity>
+                        <table>nrod_giftregistry_entity</table>
+                    </entity>
+                    <item>
+                        <table>nrod_giftregistry_item</table>
+                    </item>
+                    <type>
+                        <table>nrod_giftregistry_type</table>
+                    </type>
+                </entities>
+            </nrod_giftregistry_mysql4>
+        </models>
+        <resources>
+            <giftregistry_setup>
+                <setup>
+                    <module>
+                        Nrod_Giftregistry
+                    </module>
+                    <class>
+                        Nrod_Giftregistry_Model_Resource_Setup
+                    </class>
+                </setup>
+                <connection>
+                    <use>
+                        core_setup
+                    </use>
+                </connection>
+            </giftregistry_setup>
+            <giftregistry_write>
+                <connection>
+                    <use>
+                        core_write
+                    </use>
+                </connection>
+            </giftregistry_write>
+            <giftregistry_read>
+                <connection>
+                    <use>
+                        core_read
+                    </use>
+                </connection>
+            </giftregistry_read>
+        </resources>
     </global>
 </config>
