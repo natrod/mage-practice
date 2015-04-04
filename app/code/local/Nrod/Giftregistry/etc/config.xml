@@ -38,12 +38,8 @@
         </blocks>
         <models>
             <giftregistry>
-                <class>
-                    Nrod_Giftregistry_Model
-                </class>
-                <resourceModel>
-                    nrod_giftregistry_mysql4
-                </resourceModel>
+                <class>Nrod_Giftregistry_Model</class>
+                <resourceModel>nrod_giftregistry_mysql4</resourceModel>
             </giftregistry>
             <nrod_giftregistry_mysql4>
                 <class>Nrod_Giftregistry_Model_Mysql4</class>

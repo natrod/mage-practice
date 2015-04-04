@@ -5,12 +5,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 $installer=$this;
 $installer->startSetup();
-$tableName=$installer->getTable('nrod_giftregistry/entity');
+$tableName=$installer->getTable('giftregistry/entity');
+
 if($installer->getConnection()->isTableExists($tableName) !=true)
 {
+    
     $table = $installer->getConnection()
         ->newTable($tableName)
         ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
@@ -75,18 +76,18 @@ null,
                 'nullable' => false,
             ),
             'Created At')
-        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('giftregistry/entity', 
 array('customer_id')),
             array('customer_id'))
-        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('giftregistry/entity', 
 array('website_id')),
             array('website_id'))
-        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('giftregistry/entity', 
 array('type_id')),
             array('type_id'))
         ->addForeignKey(
             $installer->getFkName(
-                'nrod_giftregistry/entity',
+                'giftregistry/entity',
                 'customer_id',
                 'customer/entity',
                 'entity_id'
@@ -96,7 +97,7 @@ array('type_id')),
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
         ->addForeignKey(
             $installer->getFkName(
-                'nrod_giftregistry/entity',
+                'giftregistry/entity',
                 'website_id',
                 'core/website',
                 'website_id'
@@ -105,15 +106,64 @@ array('type_id')),
 'website_id',
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
         ->addForeignKey(
-            $installer->getFkName('nrod_giftregistry/entity',
+            $installer->getFkName('giftregistry/entity',
                 'type_id',
-                'nrod_giftregistry/type',
+                'giftregistry/type',
                 'type_id'
             ),
-            'type_id', $installer->getTable('nrod_giftregistry/type'), 
+            'type_id', $installer->getTable('giftregistry/type'), 
 'type_id',
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE);
+    
+    
     $installer->getConnection()->createTable($table);
 
+$tableName=$installer->getTable('giftregistry/type');
+
+$table1 = $installer->getConnection()
+        ->newTable($tableName)
+        ->addColumn('type_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
+            null,
+            array(
+                'identity' => true,
+                'unsigned' => true,
+                'nullable' => false,
+                'primary' => true,
+            ),
+                'Entity Id'
+        )
+        ->addColumn('code', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
+            array(),
+                'Code'
+        )
+        ->addColumn('name', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
+            array(),
+                'Name'
+        )
+        ->addColumn('description', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
+            array(),
+                'Description'
+        )
+        ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
+            null,
+            array(
+                'unsigned' => true,
+                'nullable' => false,
+                'default' => '0'
+            ),
+                'Store'
+        )
+
+        ->addColumn('is_active', Varien_Db_Ddl_Table::TYPE_INTEGER, 
+            null,
+            array(
+                'unsigned' => true,
+                'nullable' => false,
+                'default' => '0'
+            ),
+                'Is Active'
+        );
+        $installer->getConnection()->createTable($table1);
+    
 $installer->endSetup();
 }
