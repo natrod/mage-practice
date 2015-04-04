@@ -75,18 +75,18 @@ null,
                 'nullable' => false,
             ),
             'Created At')
-        ->addIndex($installer->getIdxName('mdg_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
 array('customer_id')),
             array('customer_id'))
-        ->addIndex($installer->getIdxName('mdg_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
 array('website_id')),
             array('website_id'))
-        ->addIndex($installer->getIdxName('mdg_giftregistry/entity', 
+        ->addIndex($installer->getIdxName('nrod_giftregistry/entity', 
 array('type_id')),
             array('type_id'))
         ->addForeignKey(
             $installer->getFkName(
-                'mdg_giftregistry/entity',
+                'nrod_giftregistry/entity',
                 'customer_id',
                 'customer/entity',
                 'entity_id'
@@ -96,7 +96,7 @@ array('type_id')),
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
         ->addForeignKey(
             $installer->getFkName(
-                'mdg_giftregistry/entity',
+                'nrod_giftregistry/entity',
                 'website_id',
                 'core/website',
                 'website_id'
@@ -105,12 +105,12 @@ array('type_id')),
 'website_id',
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
         ->addForeignKey(
-            $installer->getFkName('mdg_giftregistry/entity',
+            $installer->getFkName('nrod_giftregistry/entity',
                 'type_id',
-                'mdg_giftregistry/type',
+                'nrod_giftregistry/type',
                 'type_id'
             ),
-            'type_id', $installer->getTable('mdg_giftregistry/type'), 
+            'type_id', $installer->getTable('nrod_giftregistry/type'), 
 'type_id',
             Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE);
     $installer->getConnection()->createTable($table);

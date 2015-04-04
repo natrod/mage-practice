@@ -63,31 +63,21 @@
         <resources>
             <giftregistry_setup>
                 <setup>
-                    <module>
-                        Nrod_Giftregistry
-                    </module>
-                    <class>
-                        Nrod_Giftregistry_Model_Resource_Setup
-                    </class>
+                    <module>Nrod_Giftregistry</module>
+                    <class>Nrod_Giftregistry_Model_Resource_Setup</class>
                 </setup>
                 <connection>
-                    <use>
-                        core_setup
-                    </use>
+                    <use>core_setup</use>
                 </connection>
             </giftregistry_setup>
             <giftregistry_write>
                 <connection>
-                    <use>
-                        core_write
-                    </use>
+                    <use>core_write</use>
                 </connection>
             </giftregistry_write>
             <giftregistry_read>
                 <connection>
-                    <use>
-                        core_read
-                    </use>
+                    <use>core_read</use>
                 </connection>
             </giftregistry_read>
         </resources>
