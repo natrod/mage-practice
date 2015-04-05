@@ -11,7 +11,6 @@ $tableName=$installer->getTable('giftregistry/entity');
 
 if($installer->getConnection()->isTableExists($tableName) !=true)
 {
-    
     $table = $installer->getConnection()
         ->newTable($tableName)
         ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
@@ -117,53 +116,5 @@ array('type_id')),
     
     
     $installer->getConnection()->createTable($table);
-
-$tableName=$installer->getTable('giftregistry/type');
-
-$table1 = $installer->getConnection()
-        ->newTable($tableName)
-        ->addColumn('type_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
-            null,
-            array(
-                'identity' => true,
-                'unsigned' => true,
-                'nullable' => false,
-                'primary' => true,
-            ),
-                'Entity Id'
-        )
-        ->addColumn('code', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
-            array(),
-                'Code'
-        )
-        ->addColumn('name', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
-            array(),
-                'Name'
-        )
-        ->addColumn('description', Varien_Db_Ddl_Table::TYPE_TEXT, 255,
-            array(),
-                'Description'
-        )
-        ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 
-            null,
-            array(
-                'unsigned' => true,
-                'nullable' => false,
-                'default' => '0'
-            ),
-                'Store'
-        )
-
-        ->addColumn('is_active', Varien_Db_Ddl_Table::TYPE_INTEGER, 
-            null,
-            array(
-                'unsigned' => true,
-                'nullable' => false,
-                'default' => '0'
-            ),
-                'Is Active'
-        );
-        $installer->getConnection()->createTable($table1);
-    
-$installer->endSetup();
 }
+$installer->endSetup();
