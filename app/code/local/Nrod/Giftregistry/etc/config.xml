@@ -22,7 +22,7 @@
 <config>
     <modules>
         <Nrod_Giftregistry>
-            <version>0.0.0.1</version>
+            <version>0.0.0.3</version>
         </Nrod_Giftregistry>
     </modules>
     <global>
