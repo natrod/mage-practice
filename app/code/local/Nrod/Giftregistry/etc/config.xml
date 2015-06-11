@@ -78,4 +78,15 @@
             </giftregistry_read>
         </resources>
     </global>
+    <frontend>
+        <routers>
+            <nrod_giftregistry>
+                <use>standard</use>
+                <args>
+                    <module>Nrod_Giftregistry</module>
+                    <frontName>giftregistry</frontName>
+                </args>
+            </nrod_giftregistry>
+        </routers>
+    </frontend>
 </config>
