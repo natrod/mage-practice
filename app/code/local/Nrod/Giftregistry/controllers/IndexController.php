@@ -59,25 +59,30 @@ class Nrod_Giftregistry_IndexController extends Mage_Core_Controller_Front_Actio
         $registry = Mage::getModel('giftregistry/entity');
         $customer = Mage::getSingleton('customer/session')->getCustomer();
         try{
-           if($this->getRequest()->isPost() && !empty($data)){
-                  $registry->updateRegistryData($customer, $data);
-            $registry->save();
-            $successMessage = Mage::helper('mdg_giftregistry')->__('Registry Successfully Created');
-            Mage::getSingleton('core/session')->addSuccess($successMessage);
-        }else{
-            throw new Exception("Insufficient Data provided");
-        }
+            if($this->getRequest()->isPost() && !empty($data)){
+             $registry->updateRegistryData($customer, $data);
+             $registry->save();
+             $successMessage = Mage::helper('giftregistry')->__('Registry Successfully Created');
+             Mage::getSingleton('core/session')->addSuccess($successMessage);
+             
+            }else{
+                throw new Exception("Insufficient Data provided");
+            }
 
                
            }
-           catch (Mage_Core_Exception $e){}
-        }
+           catch (Mage_Core_Exception $e){
+               Mage::log("Error",6,"Controller.log");
+           }
         
         
-        $this->loadLayout();
+        
+      //  $this->loadLayout();
         $this->renderLayout();
         return $this;
     }
+    
+    
     public function editPostAction()
     {
         $this->loadLayout();
