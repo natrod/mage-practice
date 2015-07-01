@@ -41,7 +41,7 @@ class Nrod_Giftregistry_Model_Entity extends Mage_Core_Model_Abstract
        }
        catch(Exception $e)
        {
-           Mage::logException($e);
+           Mage::logException($e->getMessage());
        }
        return $this;
      }

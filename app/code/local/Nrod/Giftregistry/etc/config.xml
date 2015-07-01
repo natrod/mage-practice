@@ -88,5 +88,12 @@
                 </args>
             </nrod_giftregistry>
         </routers>
+        <layout>
+        	<updates>
+        		<nrod_giftregistry module="nrod_giftregistry">
+        			<file>nrod_giftregistry.xml</file>
+    			</nrod_giftregistry>
+    		</updates>
+    	</layout>
     </frontend>
 </config>

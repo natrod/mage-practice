@@ -11,6 +11,7 @@ umask(0);
 Mage::app();
 ini_set('display_errors', 1);
 
+/*
 echo "<pre>";
 $model=Mage::getModel('giftregistry/entity');
 //$model=new Nrod_Giftregistry_Model_Type;
@@ -34,3 +35,16 @@ $r=$q->fetch();
 
     
 */
+echo "<pre>";
+$registry=Mage::getModel('giftregistry/entity');
+$customer=Mage::getModel('customer/customer')->load(137);
+print_r($customer->getData());
+
+  $registry->setCustomerId($customer->getId());
+            $registry->setWebsiteId($customer->getWebsiteId());
+            $registry->setTypeId(1);
+            $registry->setEventName('Happy Days');
+            $registry->setEventDate('2015-07-30 12:53:54');
+            $registry->setEventCountry('India');
+            $registry->setEventLocation('Back Yard');
+			$registry->save();

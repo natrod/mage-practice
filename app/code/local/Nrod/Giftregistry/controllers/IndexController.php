@@ -38,7 +38,7 @@ class Nrod_Giftregistry_IndexController extends Mage_Core_Controller_Front_Actio
     public function deleteAction()
     {
     	try {
-    		if(isset($this->getRequest()->getParam('registry_id')))
+    		if($this->getRequest()->getParam('registry_id'))
 			{
 				$registryId = $this->getRequest()->getParam('registry_id');
 				$registry = Mage::getModel('giftregistry/entity')->load($registryId);
