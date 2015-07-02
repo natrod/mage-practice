@@ -18,4 +18,14 @@ class Nrod_Giftregistry_Helper_Data extends Mage_Payment_Helper_Data
 		$collection = Mage::getModel('giftregistry/type')->getCollection();
 		return $collection;
 	}
+	
+	public function isRegistryOwner($registryCustomerId)
+	{
+		$currentCustomer = Mage::getSingleton('customer/session')->getCustomer();
+		if($currentCustomer && $currentCustomer->getId() == $registryCustomerId)
+			{
+			return true;
+			}
+		return false;
+	}
 }

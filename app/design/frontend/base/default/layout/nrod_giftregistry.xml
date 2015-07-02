@@ -4,21 +4,38 @@
 			<block name="giftregistry.list" type="giftregistry/list" template="nrod/list.phtml" as="giftregistry_list"/>
 		</reference>
 	</nrod_giftregistry_index_index>
+	
+	
 	<nrod_giftregistry_index_new>
 		<reference name="content">
 			<block name="giftregistry.new" type="core/template" template="nrod/new.phtml" as="giftregistry_new"/>
 		</reference>
 	</nrod_giftregistry_index_new>
+	
+	
+	
 	<nrod_giftregistry_index_edit>
-		<block name="giftregistry.new" type="core/template" template="nrod/new.phtml" as="giftregistry_new"/>
+		<block name="giftregistry.edit" type="core/template" template="nrod/edit.phtml" as="giftregistry_edit"/>
 	</nrod_giftregistry_index_edit>
+	
+	
 	<nrod_giftregistry_view_view>
-	
+		<reference name="content">
+			<block name="giftregistry.view" type="core/template" template="nrod/view.phtml" as="giftregistry_view"/>
+		</reference>
 	</nrod_giftregistry_view_view>
+	
+	
 	<nrod_giftregistry_search_index>
-	
+		<reference name="content">
+			<block name="giftregistry.search" type="core/template" 	template="nrod/search.phtml" as="giftregistry_search"/>
+		</reference>
 	</nrod_giftregistry_search_index>
-	<nrod_giftregistry_search_results>
 	
+	
+	<nrod_giftregistry_search_results>
+		<reference name="content">
+			<block name="giftregistry.results" type="core/template" template="nrod/list.phtml"/>
+		</reference>
 	</nrod_giftregistry_search_results>
 </layout>

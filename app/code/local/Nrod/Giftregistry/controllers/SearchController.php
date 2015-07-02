@@ -10,7 +10,10 @@ class Nrod_Giftregistry_SearchController extends Mage_Core_Controller_Front_Acti
 	public function resultsAction()
 	{
 		$this->loadLayout();
-		if ($searchParams = $this->getRequest()->getParam('search_params')) {
+		$searchParams=array(
+		'name'=>$this->getRequest()->getPost('name'),
+		);
+		//if ($searchParams = $this->getRequest()->getParam('search_params')) {
 				$results=Mage::getModel('giftregistry/entity')->getCollection();		
 					
 				if($searchParams['type']){
@@ -22,8 +25,17 @@ class Nrod_Giftregistry_SearchController extends Mage_Core_Controller_Front_Acti
 				if($searchParams['location']){
 					$results->addFieldToFilter('event_location',$searchParams['location']);
 				}
-				$this->getLayout()->getBlock('mdg_giftregistry.search.results')->setResults($results);
-		}
+				if($searchParams['country']){
+					$results->addFieldToFilter('event_country',$searchParams['country']);
+				}
+				if($searchParams['name']){
+					$results->addFieldToFilter('event_name',$searchParams['name']);
+				}
+					
+				$this->getLayout()->getBlock('giftregistry.results')->setCustomerRegistries($results);
+			
+//		}
+		
         $this->renderLayout();
         return $this;
 	}
