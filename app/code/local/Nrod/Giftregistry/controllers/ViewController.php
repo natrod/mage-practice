@@ -1,6 +1,9 @@
 <?php
 class Nrod_Giftregistry_ViewController extends Mage_Core_Controller_Front_Action
 {
+	public function indexAction(){
+		$this->_forward('view');
+	}	
 	public function viewAction()
 	{
 		$registryId = $this->getRequest()->getParam('registry_id');

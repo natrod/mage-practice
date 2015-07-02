@@ -13,4 +13,9 @@ class Nrod_Giftregistry_Helper_Data extends Mage_Payment_Helper_Data
     {
         return "If you can see this the module is working";
     }
+	
+	public function getEventTypes(){
+		$collection = Mage::getModel('giftregistry/type')->getCollection();
+		return $collection;
+	}
 }
