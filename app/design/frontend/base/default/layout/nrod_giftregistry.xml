@@ -1,12 +1,16 @@
 <layout version="0.1.0">
 	<nrod_giftregistry_index_index>
-	
+		<reference name="content">
+			<block name="giftregistry.list" type="giftregistry/list" template="nrod/list.phtml" as="giftregistry_list"/>
+		</reference>
 	</nrod_giftregistry_index_index>
 	<nrod_giftregistry_index_new>
-	
+		<reference name="content">
+			<block name="giftregistry.new" type="core/template" template="nrod/new.phtml" as="giftregistry_new"/>
+		</reference>
 	</nrod_giftregistry_index_new>
 	<nrod_giftregistry_index_edit>
-	
+		<block name="giftregistry.new" type="core/template" template="nrod/new.phtml" as="giftregistry_new"/>
 	</nrod_giftregistry_index_edit>
 	<nrod_giftregistry_view_view>
 	
