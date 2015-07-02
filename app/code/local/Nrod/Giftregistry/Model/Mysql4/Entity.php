@@ -10,6 +10,6 @@ class Nrod_Giftregistry_Model_Mysql4_Entity extends Mage_Core_Model_Mysql4_Abstr
 {
     public function _construct()
     {
-        $this->_init('giftregistry/item','entity_id');
+        $this->_init('giftregistry/entity','entity_id');
     }
 }
