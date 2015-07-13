@@ -22,7 +22,7 @@
 <config>
     <modules>
         <Nrod_Giftregistry>
-            <version>0.0.0.4</version>
+            <version>0.0.0.6</version>
         </Nrod_Giftregistry>
     </modules>
     <global>
@@ -96,4 +96,31 @@
     		</updates>
     	</layout>
     </frontend>
+    <admin>
+    	<routers>
+    		<adminhtml>
+    			<args>
+    				<modules>
+    					<nrod_giftregistry before="Mage_Adminhtml">Nrod_Giftregistry_Adminhtml</nrod_giftregistry>
+    				</modules>
+    			</args>	
+			</adminhtml>
+    	</routers>
+    </admin>
+    <adminhtml>
+    	<layout>
+    		<updates>
+    			<nrod_giftregistry module="nrod_giftregistry">
+    				<file>nrod_giftregistry.xml</file>
+    			</nrod_giftregistry>
+    		</updates>
+    	</layout>
+	</adminhtml>
+	<phpunit>
+		<suite>
+			<modules>
+				<Nrod_Giftregistry/>
+			</modules>	
+		</suite>
+	</phpunit>
 </config>

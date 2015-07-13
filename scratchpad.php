@@ -35,12 +35,21 @@ $r=$q->fetch();
 
     
 */
+/*
+ *
+ */
+$collection = Mage::getModel('directory/country')->getResourceCollection();
+$options = $collection->toOptionArray();
+ echo "<pre>";
+print_r($options);
+ /*
+$adminUserModel = Mage::getModel('admin/user');
+$collection = $adminUserModel->getResourceCollection(); 
+foreach($collection as $c)
+{
 echo "<pre>";
-$registry=Mage::getModel('giftregistry/entity')->getCollection()->addFieldToFilter('type_id',1);
-foreach($registry as $r){
-	print_r($r->getData());
-	
+print_r($c->getData());
+
 }
-
-
-
+  * 
+  */
