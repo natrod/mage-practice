@@ -116,11 +116,4 @@
     		</updates>
     	</layout>
 	</adminhtml>
-	<phpunit>
-		<suite>
-			<modules>
-				<Nrod_Giftregistry/>
-			</modules>	
-		</suite>
-	</phpunit>
 </config>

@@ -13,4 +13,14 @@
 		</reference>
 	</reference>
 	</adminhtml_customer_edit>
+	<adminhtml_giftregistry_index>
+		<reference name="content">
+			<block type="giftregistry/adminhtml_registries" name="registries" />
+		</reference>
+	</adminhtml_giftregistry_index>
+	<adminhtml_giftregistry_edit>
+		<reference name="content">
+			<block type="giftregistry/adminhtml_registries_edit"	name="new_registry_tabs" />
+		</reference>
+	</adminhtml_giftregistry_edit>
 </layout>
