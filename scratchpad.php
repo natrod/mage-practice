@@ -38,6 +38,7 @@ $r=$q->fetch();
 /*
  *
  */
+ /*
 $collection = Mage::getModel('directory/country')->getResourceCollection();
 $options = $collection->toOptionArray();
  echo "<pre>";
@@ -53,3 +54,9 @@ print_r($c->getData());
 }
   * 
   */
+  
+  
+  
+  $code=
+  echo "<pre>";
+  print_r($code);

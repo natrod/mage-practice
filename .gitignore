@@ -120,3 +120,6 @@ skin/install/
 var/
 app/etc/modules/Magneto_Debug.xml
 app/code/community
+/magmi
+
+/media
